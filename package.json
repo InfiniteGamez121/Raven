@@ -1,5 +1,5 @@
 {
-    "name": "Anchor"
+    "name": "Rhodium",
     "version": "1.0.0",
     "description": "",
     "main": "lib/main/bundle.js",
@@ -21,3 +21,4 @@
       "ws": "^8.4.0"
     }
   }
+  
