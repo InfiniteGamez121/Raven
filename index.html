@@ -1,225 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anchor</title>
-  <!-- Favicon -->
-  <link rel="icon" href="https://static-00.iconduck.com/assets.00/anchor-icon-2048x2048-79r9lejz.png" type="image/png">
-
-  <style>
-    /* General Styles */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      overflow-y: auto;
-    }
-
-    /* Water-themed background animation */
-    @keyframes wave {
-      0% { transform: translateX(0) translateY(0); }
-      50% { transform: translateX(-25%) translateY(-10%); }
-      100% { transform: translateX(0) translateY(0); }
-    }
-
-    .water-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><path fill="%230077be" d="M0 300Q200 400 400 300T800 300V600H0Z"/></svg>') repeat;
-      animation: wave 10s infinite linear;
-      z-index: -1;
-    }
-
-    /* Container for the form */
-    .container {
-      text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      z-index: 1;
-      position: relative;
-      max-width: 600px;
-      width: 100%;
-      margin-top: 60px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .description {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 1.5rem;
-    }
-
-    /* Search bar and button */
-    form {
-      display: flex;
-      justify-content: center;
-      gap: 10px; /* Space between search input and button */
-    }
-
-    form input[name="url"] {
-      padding: 15px;
-      font-size: 1.5rem;
-      border: 2px solid #fff;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.2);
-      width: 400px;
-      color: #ff2c2c;
-      transition: width 0.3s ease-in-out;
-      font-family: 'Courier New', Courier, monospace;
-    }
-
-    form input[name="url"]:focus {
-      width: 500px;
-    }
-
-    form input[type="submit"] {
-      padding: 15px;
-      font-size: 1.5rem;
-      background-color: #0077be;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    form input[type="submit"]:hover {
-      background-color: #005f8b;
-    }
-
-    /* Placeholder Text Customization */
-    form input[name="url"]::placeholder {
-      color: #b0b0b0;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 1.2rem;
-    }
-
-    /* Logo */
-    .logo {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1rem;
-    }
-
-    /* Contributor Box */
-    .contributor-box,
-    .social-box {
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      text-align: center;
-    }
-
-    .contributor-box h2,
-    .social-box h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .contributor-box .contributors,
-    .social-box .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .contributor-box .contributors img,
-    .social-box .social-links a {
-      width: 80px;
-      height: 80px;
-    }
-
-    .contributor-box .contributors img {
-      border-radius: 50%;
-      border: 2px solid #00a8e8;
-    }
-
-    .social-box .social-links a {
-      color: #00a8e8;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    .social-box .social-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Flex container for side-by-side layout */
-    .footer-box {
-      display: flex;
-      justify-content: center;
-      gap: 40px; /* Space between sections */
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    /* Styling for the social images */
-    .social-box img {
-      width: 40px;
-      height: 40px;
-      margin-top: 10px;
-    }
-
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Tab</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="index.js"></script>
 </head>
-<body class="blocked">
-  <div class="container">
-    <img src="https://static-00.iconduck.com/assets.00/anchor-icon-2048x2048-79r9lejz.png" alt="Anchor Logo" class="logo" />
-    <h1>Anchor</h1>
-    <p class="description">Anchor is a highly sophisticated web proxy allowing users to evade censorship.</p>
+<body>
+<center>
+<h1 class="title">Raven</h1>
 
-    <!-- New Search Form -->
-    <form method="POST" action="/service/gateway">
-      <input name="url" placeholder="Dive into the web"><br>
-      <input type="submit" value="Search">
-    </form>
-  </div>
+<div class="searchbox">
+<input autofocus id="search" placeholder="Search the web freely" spellcheck="false" autocomplete="off">
+</div>
+</center>
 
-  <!-- Footer Section with Contributors and Social Links side by side -->
-  <div class="footer-box">
-    <div class="contributor-box">
-      <h2>Contributors</h2>
-      <div class="contributors">
-        <img src="https://pbs.twimg.com/media/EEUy6MCU0AErfve.png" alt="Contributor 1" />
-        <img src="https://e7.pngegg.com/pngimages/858/71/png-clipart-logo-linkedin-icon-letter-c-blue-text-thumbnail.png" alt="Contributor 2" />
-      </div>
-    </div>
-
-    <div class="social-box">
-      <h2>Follow us on:</h2>
-      <div class="social-links">
-        <a href="https://discord.gg/X4Y4z5Vrmw">Discord</a>
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord Icon" /><br>
-        <a href="https://github.com/InfiniteGamez121/Anchor">GitHub</a>
-        <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="GitHub Icon" />
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Notification Logic
-    function closeNotification() {
-      document.getElementById('notification').style.display = 'none';
-      document.body.classList.remove('blocked');
-    }
-  </script>
+<div id="content">
+<!-- Content will be here -->
+</div>
 </body>
 </html>
